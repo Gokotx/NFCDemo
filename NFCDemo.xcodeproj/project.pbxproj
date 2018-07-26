@@ -15,6 +15,7 @@
 		E80D859B1F4136D8002743E0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E80D859A1F4136D8002743E0 /* main.m */; };
 		E80D85A51F4136D8002743E0 /* NFCDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E80D85A41F4136D8002743E0 /* NFCDemoTests.m */; };
 		E80D85B01F4136D8002743E0 /* NFCDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E80D85AF1F4136D8002743E0 /* NFCDemoUITests.m */; };
+		E80D85C01F413FB3002743E0 /* CoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E80D85BF1F413FB3002743E0 /* CoreNFC.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		E80D85AB1F4136D8002743E0 /* NFCDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NFCDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E80D85AF1F4136D8002743E0 /* NFCDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NFCDemoUITests.m; sourceTree = "<group>"; };
 		E80D85B11F4136D8002743E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E80D85BD1F413803002743E0 /* NFCDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NFCDemo.entitlements; sourceTree = "<group>"; };
+		E80D85BF1F413FB3002743E0 /* CoreNFC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreNFC.framework; path = System/Library/Frameworks/CoreNFC.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E80D85C01F413FB3002743E0 /* CoreNFC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +89,7 @@
 				E80D85A31F4136D8002743E0 /* NFCDemoTests */,
 				E80D85AE1F4136D8002743E0 /* NFCDemoUITests */,
 				E80D85891F4136D8002743E0 /* Products */,
+				E80D85BE1F413FB2002743E0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +106,7 @@
 		E80D858A1F4136D8002743E0 /* NFCDemo */ = {
 			isa = PBXGroup;
 			children = (
+				E80D85BD1F413803002743E0 /* NFCDemo.entitlements */,
 				E80D858B1F4136D8002743E0 /* AppDelegate.h */,
 				E80D858C1F4136D8002743E0 /* AppDelegate.m */,
 				E80D858E1F4136D8002743E0 /* ViewController.h */,
@@ -130,6 +136,14 @@
 				E80D85B11F4136D8002743E0 /* Info.plist */,
 			);
 			path = NFCDemoUITests;
+			sourceTree = "<group>";
+		};
+		E80D85BE1F413FB2002743E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E80D85BF1F413FB3002743E0 /* CoreNFC.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +213,11 @@
 				TargetAttributes = {
 					E80D85871F4136D8002743E0 = {
 						CreatedOnToolsVersion = 9.0;
+						SystemCapabilities = {
+							com.apple.NearFieldCommunicationTagReading = {
+								enabled = 1;
+							};
+						};
 					};
 					E80D859F1F4136D8002743E0 = {
 						CreatedOnToolsVersion = 9.0;
@@ -427,7 +446,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NFCDemo/NFCDemo.entitlements;
+				DEVELOPMENT_TEAM = LJJD8856HP;
 				INFOPLIST_FILE = NFCDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.goko.NFCDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -439,7 +461,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NFCDemo/NFCDemo.entitlements;
+				DEVELOPMENT_TEAM = LJJD8856HP;
 				INFOPLIST_FILE = NFCDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.goko.NFCDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
